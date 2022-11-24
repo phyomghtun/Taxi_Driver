@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Taxi</string>
+    <string name="sign_in_btn">Sign in with Google</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="signout">Log Out</string>
+    <string name="phone">09*********</string>
+    <string name="location">location</string>
+</resources>

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "338528211843",
+    "firebase_url": "https://taxi-12b09-default-rtdb.firebaseio.com",
+    "project_id": "taxi-12b09",
+    "storage_bucket": "taxi-12b09.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:338528211843:android:e705e4dafe736aed7f5cb6",
+        "android_client_info": {
+          "package_name": "apk.fortaxi.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "338528211843-utac6hch957j47munn6s2k4vvrqu7bs6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXYH5QQTejqKi8I8eoDQEGZotkWNwXzeM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "338528211843-utac6hch957j47munn6s2k4vvrqu7bs6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
