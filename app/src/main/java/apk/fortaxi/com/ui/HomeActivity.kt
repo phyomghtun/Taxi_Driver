@@ -1,24 +1,20 @@
 package apk.fortaxi.com.ui
 
-import android.Manifest
-import android.annotation.SuppressLint
-import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.location.Location
-import android.location.LocationManager
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import apk.fortaxi.com.R
 import apk.fortaxi.com.adapter.CustomerListAdapter
 import apk.fortaxi.com.databinding.ActivityHomeBinding
 import apk.fortaxi.com.extension.loadUrl
+import apk.fortaxi.com.model.Customer
 import apk.fortaxi.com.viewmodel.HomeViewModel
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -37,6 +33,8 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var fusedLocationProviderClient: FusedLocationProviderClient
     var latitude : String? = null
     var longitude : String? = null
+
+    var dataList = ArrayList <Customer> ()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -75,6 +73,17 @@ class HomeActivity : AppCompatActivity() {
                 }
         }
 
+        binding.search.addTextChangedListener(object : TextWatcher{
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) { }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) { }
+
+            override fun afterTextChanged(s: Editable?) {
+                filter(s.toString())
+            }
+
+        })
+
         getLocation()
         initRecycler()
         getCustomer()
@@ -94,6 +103,8 @@ class HomeActivity : AppCompatActivity() {
         viewModel.getDetails().observe(this){
             Log.d("customer", it.toString())
             customerListAdapter.setCustomer(it)
+            dataList.addAll(it)
+            binding.progress.visibility = View.INVISIBLE
             latitude?.let { it1 -> longitude?.let { it2 ->
                 customerListAdapter.setLocation(it1,
                     it2
@@ -124,6 +135,17 @@ class HomeActivity : AppCompatActivity() {
                 longitude = it.longitude.toString()
 
             }
+        }
+    }
+
+    //Search
+    private fun filter(text: String) {
+        val filteredNames = ArrayList <Customer> ()
+        dataList.filterTo(filteredNames) {
+            it.name!!.toLowerCase().contains(text.toLowerCase())
+        }
+        if (filteredNames != null) {
+            customerListAdapter!!.filterList(filteredNames)
         }
     }
 

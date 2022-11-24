@@ -3,6 +3,7 @@ package apk.fortaxi.com.adapter
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -52,5 +53,12 @@ class CustomerListAdapter(var context: Context): RecyclerView.Adapter<CustomerLi
     override fun getItemCount(): Int = customerList.size
 
     class ViewHolder(val binding: ItemCustomerBinding):RecyclerView.ViewHolder(binding.root)
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun filterList(filteredNames: ArrayList <Customer> ) {
+        // this.dataList.clear()
+        this.customerList = filteredNames
+        notifyDataSetChanged()
+    }
 
 }

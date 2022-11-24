@@ -7,6 +7,13 @@
     android:background="@color/background"
     tools:context=".ui.HomeActivity">
 
+    <ProgressBar
+        android:id="@+id/progress"
+        android:visibility="visible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cv"
         android:layout_width="match_parent"
@@ -69,8 +76,26 @@
 
     </androidx.cardview.widget.CardView>
 
-    <androidx.recyclerview.widget.RecyclerView
+    <EditText
+        android:id="@+id/search"
         android:layout_below="@+id/cv"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/editbox"
+        android:hint="@string/search"
+        android:padding="10dp"
+        android:singleLine="true"
+        android:textColor="#070707"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:drawableStart="@drawable/customer" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@+id/search"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/rView"/>
