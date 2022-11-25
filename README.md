@@ -5,32 +5,15 @@
 <!-- ![Screenshot](login.jpg) -->
  <img src="images/login.jpg" alt="drawing" width="200"/>
 
-<div style="width: 50%; height: 50%">
-  
-  ![](images/login.jpg)
-  
-</div>
-
 2.Log Out Button And Customer List
 
-<div style="width: 50%; height: 50%">
-  
-  ![](images/list.jpg)
-  
-</div>
+<img src="images/list.jpg" alt="drawing" width="200"/>
 
-2.Search Customer
+3.Search Customer
 
-<div style="width: 50%; height: 50%">
-  
-  ![](images/search.jpg)
-  
-</div>
+<img src="images/search.jpg" alt="drawing" width="200"/>
 
-2.Customer and Driver Location
+4.Customer and Driver Location
 
-<div style="width: 50%; height: 50%">
-  
-  ![](images/map.jpg)
-  
-</div>
+<img src="images/map.jpg" alt="drawing" width="200"/>
+
