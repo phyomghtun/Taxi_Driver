@@ -3,8 +3,8 @@
 1.Sign in With Google Account
 
 <!-- ![Screenshot](login.jpg) -->
-
-<div style="width: 20%; height: 20%">
+![](images/login.jpg)
+<div style="width: 50%; height: 50%">
   
   ![](images/login.jpg)
   
