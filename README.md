@@ -3,7 +3,7 @@
 1.Sign in With Google Account
 
 <!-- ![Screenshot](login.jpg) -->
- ![](images/login.jpg =100x20)
+ <img src="images/login.jpg" alt="drawing" width="200"/>
 
 <div style="width: 50%; height: 50%">
   
